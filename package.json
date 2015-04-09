@@ -1,6 +1,6 @@
 {
   "name": "passport-soundcloud-token",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Passport strategy for authenticating with SoundCloud via OAuth2 access tokens",
   "main": "index.js",
   "scripts": {
