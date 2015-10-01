@@ -1,4 +1,4 @@
-{
+export default JSON.stringify({
   "id": 3207,
   "permalink": "jwagener",
   "username": "Johannes Wagener",
@@ -23,4 +23,4 @@
   "private_tracks_count": 63,
   "private_playlists_count": 3,
   "primary_email_confirmed": true
-}
+})
