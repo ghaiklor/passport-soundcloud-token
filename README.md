@@ -1,6 +1,13 @@
 # passport-soundcloud-token
 
-![Build Status](https://img.shields.io/travis/ghaiklor/passport-soundcloud-token.svg) ![Coverage](https://img.shields.io/coveralls/ghaiklor/passport-soundcloud-token.svg) ![Downloads](https://img.shields.io/npm/dm/passport-soundcloud-token.svg) ![npm version](https://img.shields.io/npm/v/passport-soundcloud-token.svg) ![dependencies](https://img.shields.io/david/ghaiklor/passport-soundcloud-token.svg) ![dev dependencies](https://img.shields.io/david/dev/ghaiklor/passport-soundcloud-token.svg) ![License](https://img.shields.io/npm/l/passport-soundcloud-token.svg)
+![Build Status](https://img.shields.io/travis/ghaiklor/passport-soundcloud-token.svg)
+![Coverage](https://img.shields.io/coveralls/ghaiklor/passport-soundcloud-token.svg)
+![Downloads](https://img.shields.io/npm/dm/passport-soundcloud-token.svg)
+![Downloads](https://img.shields.io/npm/dt/passport-soundcloud-token.svg)
+![npm version](https://img.shields.io/npm/v/passport-soundcloud-token.svg)
+![dependencies](https://img.shields.io/david/ghaiklor/passport-soundcloud-token.svg)
+![dev dependencies](https://img.shields.io/david/dev/ghaiklor/passport-soundcloud-token.svg)
+![License](https://img.shields.io/npm/l/passport-soundcloud-token.svg)
 
 [Passport](http://passportjs.org/) strategy for authenticating with SoundCloud access tokens using the OAuth 2.0 API.
 
@@ -57,7 +64,11 @@ module.exports = {
 };
 ```
 
-The POST request to this route should include a JSON object with the keys `access_token` and optionally, `refresh_token` set to the credentials you receive from SoundCloud.
+The request to this route should include a GET or POST data with the keys `access_token` and optionally, `refresh_token` set to the credentials you receive from SoundCloud.
+
+```
+GET /auth/soundcloud?access_token=<TOKEN>
+```
 
 ## Issues
 
