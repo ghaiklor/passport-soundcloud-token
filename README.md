@@ -28,6 +28,8 @@ The SoundCloud authentication strategy authenticates users using a SoundCloud ac
 The strategy requires a `verify` callback, which accepts these credentials and calls `next` providing a user, as well as `options` specifying a app ID and app secret.
 
 ```javascript
+var SoundCloudTokenStrategy = require('passport-soundcloud-token');
+
 passport.use(new SoundCloudTokenStrategy({
     clientID: SOUND_CLOUD_CLIENT_ID,
     clientSecret: SOUND_CLOUD_CLIENT_SECRET,

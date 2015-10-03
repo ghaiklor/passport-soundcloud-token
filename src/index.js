@@ -12,21 +12,17 @@ import { OAuth2Strategy, InternalOAuthError } from 'passport-oauth';
  * - clientSecret      Secret used to establish ownership of the consumer key
  * - passReqToCallback If need, pass req to verify callback
  *
- * Example:
- *     passport.use(new SoundCloudTokenStrategy({
- *           clientID: '123-456-789',
- *           clientSecret: 'shhh-its-a-secret',
- *           passReqToCallback: true
- *       }, function(req, accessToken, refreshToken, profile, next) {
- *              User.findOrCreate(..., function (error, user) {
- *                  next(error, user);
- *              });
- *          }
- *       ));
- *
  * @param {Object} _options
  * @param {Function} _verify
- * @constructor
+ * @example
+ * passport.use(new SoundCloudTokenStrategy({
+ *   clientID: '123456789',
+ *   clientSecret: 'shhh-its-a-secret'
+ * }), function(req, accessToken, refreshToken, profile, next) {
+ *   User.findOrCreate({soundCloudId: profile.id}, function(error, user) {
+ *     next(error, user);
+ *   })
+ * })
  */
 export default class SoundCloudTokenStrategy extends OAuth2Strategy {
   constructor(_options, _verify) {
@@ -43,7 +39,8 @@ export default class SoundCloudTokenStrategy extends OAuth2Strategy {
     this._refreshTokenField = options.refreshTokenField || 'refresh_token';
     this._profileURL = options.profileURL || 'https://api.soundcloud.com/me.json';
     this._passReqToCallback = options.passReqToCallback;
-    this._oauth2._useAuthorizationHeaderForGET = true;
+
+    this._oauth2.useAuthorizationHeaderforGET(true);
   }
 
   /**
