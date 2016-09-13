@@ -40,7 +40,7 @@ export default class SoundCloudTokenStrategy extends OAuth2Strategy {
     this._profileURL = options.profileURL || 'https://api.soundcloud.com/me.json';
     this._passReqToCallback = options.passReqToCallback;
 
-    this._oauth2.useAuthorizationHeaderforGET(true);
+    this._oauth2.setAccessTokenName(options.oauth2AccessTokenName || 'oauth_token');
   }
 
   /**
