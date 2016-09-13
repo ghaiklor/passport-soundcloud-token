@@ -1,4 +1,4 @@
-import { OAuth2Strategy, InternalOAuthError } from 'passport-oauth';
+import {OAuth2Strategy, InternalOAuthError} from 'passport-oauth';
 
 /**
  * `Strategy` constructor.

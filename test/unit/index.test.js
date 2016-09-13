@@ -1,4 +1,4 @@
-import chai, { assert } from 'chai';
+import chai, {assert} from 'chai';
 import sinon from 'sinon';
 import SoundCloudTokenStrategy from '../../src/index';
 import fakeProfile from '../fixtures/profile';
@@ -20,7 +20,7 @@ describe('SoundCloudTokenStrategy:init', () => {
     let strategy = new SoundCloudTokenStrategy(STRATEGY_CONFIG, BLANK_FUNCTION);
 
     assert.equal(strategy.name, 'soundcloud-token');
-    assert(strategy._oauth2._useAuthorizationHeaderForGET);
+    assert.notOk(strategy._oauth2._useAuthorizationHeaderForGET);
   });
 
   it('Should properly throw error on empty options', () => {
